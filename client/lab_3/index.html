@@ -1,5 +1,52 @@
-<!--
-    Replace this with your working code from Lab 2, and include:
-    - The styles in this folder's `style.css`
-    - The script in script.js, which should be included via a `<script src="script.js" >` call before your closing </body> tag 
--->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanessa Harris Lab 1</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header"><h1>Vanessa Harris's Labs For INST377</h1></header>
+      <div class="container">
+        <div class="left_section box">
+          <h2>Album Names</h2>
+          <ol class="box">
+            <li>Blond - Frank Ocean</li>
+            <li>Wasteland -Brent Faiyaz</li>
+            <li>More Life - Drake</li>
+            <li>I Never Liked You - Future</li>
+            <li>KOD - J. Cole</li>
+          </ol>
+        </div>
+        <div class="right_section box">
+          <h1>Image Carousel</h1>
+          <div class="carousel">
+              <button class = "prev">prev</button>
+              <div class="slides">
+                <div class="carousel_item visible"><img id="slide_1" src="images/dip.jpeg" alt="dip"/></div>
+                <div class="carousel_item hidden"><img id="slide_2" src="images/buns.jpeg" alt="buns"/></div>
+                <div class="carousel_item hidden"><img id="slide_3" src="images/noodles.jpeg" alt="noodles"/></div>
+                <div class="carousel_item hidden"><img id="slide_4" src="images/salad.jpeg" alt="salad"/></div>
+              </div>
+              <button class = "next">next</button>
+          </div>
+          <div class="box">
+              Images of yummy food.
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <p>
+          Vanessa-Harris
+          <a href="https://vanessa-harris.github.io/INST377-Lab-Work/">
+            https://vanessa-harris.github.io/INST377-Lab-Work/</a
+          >
+        </p>
+      </footer>
+    </div>
+    <script src="script.js" ></script>
+  </body>
+</html>
