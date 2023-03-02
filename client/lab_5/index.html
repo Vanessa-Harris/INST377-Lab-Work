@@ -3,3 +3,52 @@
 <!-- If you open /routes/apiRoutes and go to line 38 you will find the server side answer to your request! -->
 
 <!-- Temporarily unhook your script.js file from your main index file -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanessa Harris Lab 4</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h1>Vanessa Harris Labs for INST 377</h1>
+      </header>
+      <div class="container">
+        <div class="left_section box">
+          <h3>Form Inputs</h3>
+          <div class="restaurant_input ">
+            <form
+              action="https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json"
+              class = "box main_form"
+            >
+              <div>
+                <label for="resto">Restaurant Name</label>
+                <input type="text" id="resto" name="resto" />
+              </div>
+              <button type="submit">Load Data</button>
+              <button type="button" class = "filter_button">Filter Data</button>
+            </form>
+          </div>
+        </div>
+        <div class="right_section box">
+          <h3>Local Restaurants</h3>
+          <div class="restaurant_list box">
+            A list of restaurants from an API
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <p>
+          Vanessa-Harris
+          <a href="https://github.com/Vanessa-Harris">
+            https://github.com/Vanessa-Harris</a
+          >
+        </p>
+      </footer>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
