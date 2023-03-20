@@ -143,6 +143,12 @@
     display: flex;
     flex-direction: column;
   }
+
+  .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  }
   
   /*
     This block is actually dependent on the "container" block having a flex set on it
