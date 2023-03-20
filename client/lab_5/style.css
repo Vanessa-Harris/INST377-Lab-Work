@@ -115,7 +115,11 @@
     Rules may combine in unexpected ways - remember that the LAST thing written in this file will have "priority"
     And will be what displays in your client
   */
-  
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    }
   .box {
     background-color: rgba(239, 239, 239, 0.40);
     border: 2px dashed;
@@ -144,11 +148,6 @@
     flex-direction: column;
   }
 
-  .buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  }
   
   /*
     This block is actually dependent on the "container" block having a flex set on it
