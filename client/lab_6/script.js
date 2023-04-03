@@ -11,8 +11,8 @@ function getRandomIntInclusive(min, max) {
 
 function injectHTML(list) {
   console.log("fired injectHTML");
-  const target = document.querySelector("#restaurant_list");
-  target.innerHTML = "";
+  const target = document.querySelector('#restaurant_list');
+  target.innerHTML = '';
   list.forEach((item) => {
     const str = `<li>${item.name}</li>`;
     target.innerHTML += str;
@@ -41,12 +41,15 @@ async function mainEvent() {
   const filterDataButton = document.querySelector("#filter");
   const loadDataButton = document.querySelector("#data_load");
   const generateListButton = document.querySelector("#generate");
+
+  const loadAnimation = document.querySelector('#data_load_animation');
+  loadAnimation.style.display = 'none';
   let currentList = [];
 
   loadDataButton.addEventListener("click", async (submitEvent) => {
     // async has to be declared on every function that needs to "await" something
-    submitEvent.preventDefault(); // This prevents your page from going to http://localhost:3000/api even if your form still has an action set on it
-    console.log("form submission"); // this is substituting for a "breakpoint"
+    console.log("Loading data"); // this is substituting for a "breakpoint"
+    loadAnimation.style.display = 'inline-block';
 
     /*
       ## GET requests and Javascript
@@ -56,9 +59,7 @@ async function mainEvent() {
         Let's get those form results before sending off our GET request using the Fetch API
     */
 
-    // this is the preferred way to handle form data in JS in 2022
-    const formData = new FormData(submitEvent.target); // get the data from the listener target
-    const formProps = Object.fromEntries(formData); // Turn it into an object
+
 
     // You can also access all forms in a document by using the document.forms collection
     // But this will retrieve ALL forms, not just the one that "heard" a submit event - less good
@@ -93,8 +94,9 @@ async function mainEvent() {
 
     // This changes the response from the GET into data we can use - an "object"
     currentList = await results.json();
+    loadAnimation.style.display = 'none'
     console.table(currentList); // this is called "dot notation"
-    injectHTML(currentList);
+  
     // arrayFromJson.data - we're accessing a key called 'data' on the returned object
     // it initially contains all 1,000 records from your request
   });
@@ -111,6 +113,7 @@ async function mainEvent() {
   generateListButton.addEventListener("click", (event) => {
     console.log('generate new list');
     const restaurantsList = cutRestaurantList(currentList);
+    console.log(restaurantsList);
     injectHTML(restaurantsList);
   });
 }
